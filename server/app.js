@@ -1,28 +1,30 @@
-const mysql = require('mysql')
-require ('dotenv').config();
+import express from "express";
+import cors from 'cors'
+// import the conexion to DB
+import db from "./database/db.js";
 
-var connection = mysql.createConnection({
-    host: 'localhost',
-    database: process.env.DATABASE,
-    user: process.env.USER,
-    password: process.env.PASSWORD
-});
+import routes from "./routes/routes.js";
 
-connection.connect(function(err) {
-    if (err) {
-        throw err;
-    } else {
-        console.log('Connected to database');
-    }
+const app = express()
+app.use(cors())
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+app.use('/bars', routes)
+
+try {
+    await db.authenticate()
+    console.log('Connection has been established successfully.')
+} catch (error) {
+    console.error('Unable to connect to the database:', error)
+}
+
+app.get('/', (req, res) => {
+    res.send('Hello World')
 })
 
-connection.query('SELECT * from barList', function(err, results, fields) {
-    if (err) 
-        throw err;
 
-        results.forEach(result => {
-            console.log(result);
-        })
-});
+const PORT = process.env.PORT || 4000
 
-connection.end();
+
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
