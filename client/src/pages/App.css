@@ -1,0 +1,39 @@
+/* Intro Page */
+
+.intro-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  width: 100vw;
+}
+
+.intro-page::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: url(./pictures/priscilla-du-preez-gandXETAUpc-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+.intro-page-title {
+  font-size: 5rem;
+  color: #ff7b00;
+  z-index: 1;
+  font-family: 'Lily Script One', cursive;
+}
+
+.intro-page-subtitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FF7b00;
+  text-align: center;
+  z-index: 1;
+}

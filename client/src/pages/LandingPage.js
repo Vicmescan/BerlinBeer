@@ -1,3 +1,4 @@
+import NavigationBar from '../components/NavigationBar';
 import './App.css';
 
 function LandingPage() {
@@ -5,7 +6,7 @@ function LandingPage() {
 
   return (
     <div className="langingPage">
-      Hello World, this is Landing Page
+      <NavigationBar />
     </div>
   );
 }

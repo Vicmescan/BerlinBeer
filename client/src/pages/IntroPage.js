@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -7,11 +8,13 @@ import './App.css';
 
 const IntroPage = () => {
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         window.location.href = '/index'
-    //     }, 3000)
-    // }, [])
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        setTimeout(() => {
+            navigate("/index")
+        }, 3000)
+    })
 
 
 return (
