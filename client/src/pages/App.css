@@ -1,4 +1,5 @@
-/* Intro Page */
+
+/* IntroPage.js */
 
 .intro-page {
   display: flex;
@@ -37,3 +38,14 @@
   text-align: center;
   z-index: 1;
 }
+
+/*  LandingPage.js */
+
+.landingPage {
+  height: 100vh;
+  background-image: url(./pictures/maarten-van-den-heuvel-EzH46XCDQRY-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
