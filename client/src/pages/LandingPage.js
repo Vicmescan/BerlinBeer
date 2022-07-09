@@ -4,6 +4,7 @@ import './App.css';
 
 function LandingPage() {
 
+  const [lactose, setLactose] = useState(true);
   const [gluten, setGluten] = useState(true)
   const [meat, setMeat] = useState(true)
   const [vegan, setVegan] = useState(false)
@@ -11,7 +12,7 @@ function LandingPage() {
 
   return (
     <div className="landingPage">
-      <NavigationBar gluten={gluten} setGluten={setGluten} meat={meat} setMeat={setMeat} vegan={vegan} setVegan={setVegan} />
+      <NavigationBar lactose={lactose} setLactose={setLactose} gluten={gluten} setGluten={setGluten} meat={meat} setMeat={setMeat} vegan={vegan} setVegan={setVegan} />
     </div>
   );
 }

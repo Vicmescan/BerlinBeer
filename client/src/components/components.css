@@ -1,0 +1,13 @@
+/* NavigationBar.js */
+
+#gluten, #lactose, #meat, #vegan, #info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    #gluten, #lactose, #meat, #vegan, #info {
+        flex-direction: column;
+    }
+}
