@@ -15,7 +15,7 @@ const NavigationBar = ({ lactose, setLactose, gluten, setGluten, meat, setMeat, 
 
     return (
         <>
-            <Navbar fixed="top" expand="lg" style={{ backgroundColor: "#ff7b00", boxShadow: "0px 5px 10px" }}>
+            <Navbar expand="lg" style={{ backgroundColor: "#ff7b00", boxShadow: "0px 5px 10px", width: "100%" }}>
                 <Container className="p-0">
                             <Navbar.Brand as={Link} to={"/index"} style={{ fontSize: "3rem", fontFamily: "'Lily Script One', cursive", color: "black" }}>Cooking</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
