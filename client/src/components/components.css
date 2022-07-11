@@ -11,3 +11,11 @@
         flex-direction: column;
     }
 }
+
+/* Addingredients.js */
+
+.addIngredients {
+    z-index: 1;
+    display: flex;
+    box-shadow: 5px 5px 10px;
+}

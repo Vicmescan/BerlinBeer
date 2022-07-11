@@ -13,7 +13,7 @@ const IntroPage = () => {
     useEffect(() => {
         setTimeout(() => {
             navigate("/index")
-        }, 3000)
+        }, 4000)
     })
 
 
