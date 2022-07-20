@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import AddIngredient from '../components/AddIngredient';
 import IngredientList from '../components/IngredientList';
 import NavigationBar from '../components/NavigationBar';
+import SubmitButton from '../components/SubmitButton';
 import './App.css';
 
 function LandingPage() {
@@ -28,7 +29,8 @@ function LandingPage() {
     <div className="landingPage">
       <NavigationBar lactose={lactose} setLactose={setLactose} gluten={gluten} setGluten={setGluten} meat={meat} setMeat={setMeat} vegan={vegan} setVegan={setVegan} />
       <AddIngredient ingredients={ingredients} setIngredients={setIngredients} />
-      <IngredientList ingredients={ingredients} />
+      <IngredientList ingredients={ingredients} setIngredients={setIngredients} />
+      <SubmitButton />
     </div>
   );
 }

@@ -1,21 +1,33 @@
-import React from 'react'
-import { Card, Button } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Card } from 'react-bootstrap'
+import { TiDelete } from 'react-icons/ti'
+import DeleteModal from './DeleteModal'
 
-const IngredientList = ({ ingredients }) => {
+
+const IngredientList = ({ ingredients, setIngredients }) => {
+
+    const [modalShow, setModalShow] = useState(false);
+    const [index, setIndex] = useState(0);
+
+    const deleteIngredient = (ingredientIndex) => {
+        setIndex(ingredientIndex)
+        setModalShow(true);
+    }
+
     return (
         <>
-            <Card style={{ width: '18rem', height: "50vh", opacity: "0.8" }}>
+            <Card id="ingredientList">
                 <Card.Body>
-                    <Card.Title>Ingredients in your home</Card.Title>
+                    <Card.Title id="title" >Ingredients in your home</Card.Title>
                     <Card.Text>
                         {ingredients.map((ingredient, index) => {
-                            return <li key={index}>{ingredient}</li>
+                            return <li className='ingredient' key={index}>- {ingredient} <TiDelete style={{color: "red", cursor: "pointer" }} onClick={() => deleteIngredient(index)} /> </li>
                         }
                         )}
                     </Card.Text>
                 </Card.Body>
             </Card>
-            <Button type="submit" style={{backgroundColor: "#ff7b00", border: "gray", color:"black", opacity:"1", zIndex:"1", margin: "-3rem 0 2rem 0" }} >Search Recept</Button>
+            <DeleteModal show={modalShow} onHide={() => setModalShow(false)} ingredients={ingredients} setIngredients={setIngredients} index={index} />
         </>
     )
 }

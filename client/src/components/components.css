@@ -1,13 +1,23 @@
+
 /* NavigationBar.js */
 
-#gluten, #lactose, #meat, #vegan, #info {
+#gluten,
+#lactose,
+#meat,
+#vegan,
+#info {
     display: flex;
     align-items: center;
     padding-bottom: 0;
 }
 
 @media (min-width: 768px) {
-    #gluten, #lactose, #meat, #vegan, #info {
+
+    #gluten,
+    #lactose,
+    #meat,
+    #vegan,
+    #info {
         flex-direction: column;
     }
 }
@@ -18,4 +28,102 @@
     z-index: 1;
     display: flex;
     box-shadow: 5px 5px 10px;
+    width: 20rem;
+    height: 3rem;
+}
+
+#addButton {
+    background-color: #ff7b00;
+    color: white;
+    border: gray;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* IngredientList.js */
+
+
+
+#ingredientList {
+    height: 50vh;
+    opacity: 0.8;
+    box-shadow: 5px 5px 10px;
+    width: 20rem;
+    overflow: auto;
+    z-index: 1;
+}
+
+#ingredientList::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+#ingredientList::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+#ingredientList::-webkit-scrollbar-thumb {
+    background: #FF7b00;;
+}
+
+#title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.ingredient {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    font-size: 1.4rem;
+}
+
+/* SubmitButton.js */
+
+#submitButton {
+    background-color: #FF7b00;
+    border: gray;
+    color: white;
+    opacity: 1;
+    z-index: 1;
+    margin: -3rem 0 2rem 0;
+    box-shadow: 2px 2px 5px black;   
+    height: 6vh;
+    font-size: 1.4rem;
+}
+
+/* DeleteModal.js */
+
+#deleteModal {
+    opacity: 0.9;
+    z-index: 1;
+    text-align: center;
+}
+
+.modalParagraph {
+    font-size: 1.4rem;
+}
+
+#modalCloseButton {
+    background-color: #ff7b00;
+    border: gray;
+    color: white;
+    opacity: 1;
+    z-index: 1;
+    box-shadow: 2px 2px 5px black; 
+    height: 6vh;  
+    font-size: 1.4rem;
+}
+
+#modalDeleteButton {
+    background-color: red;
+    color: black;
+    border: gray;
+    opacity: 1;
+    z-index: 1;
+    box-shadow: 2px 2px 5px black;   
+    height: 6vh;
+    font-size: 1.4rem;
+    color: white;
 }
