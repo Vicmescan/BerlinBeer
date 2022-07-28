@@ -1,4 +1,3 @@
-
 /* NavigationBar.js */
 
 #gluten,
@@ -126,4 +125,10 @@
     height: 6vh;
     font-size: 1.4rem;
     color: white;
+}
+
+/* MealCard.js */
+
+.mealCard {
+    margin: 1rem;
 }

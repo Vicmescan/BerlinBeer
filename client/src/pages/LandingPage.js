@@ -17,8 +17,8 @@ function LandingPage() {
   const [ingredients, setIngredients] = useState(localStorage.getItem('ingredients') !== null ? JSON.parse(localStorage.getItem('ingredients')) : []);
 
 
-  /* take the ingredients list, if they are in local storage */
   useEffect(() => {
+    /* take the ingredients list, if they are in local storage */
     if(localStorage.getItem('ingredients') !== null) {
       setIngredients(JSON.parse(localStorage.getItem('ingredients')))
     }

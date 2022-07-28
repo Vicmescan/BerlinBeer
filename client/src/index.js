@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IntroPage from './pages/IntroPage';
 import LandingPage from './pages/LandingPage';
-import SelectPage from './pages/SelectPage';
 import AboutPage from './pages/AboutPage';
+import RecipeList from './pages/RecipeList';
 
 import './index.css';
 
@@ -15,11 +15,9 @@ root.render(
         <Routes>
             <Route path="/" element={<IntroPage />} />
             <Route path="/index" element={<LandingPage />} />
-            <Route path="/select" element={<SelectPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/recipes" element={<RecipeList />} />
         </Routes>
     </BrowserRouter>
-    
-
 );
 
