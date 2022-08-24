@@ -2,9 +2,9 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import './components.css'
 
-const SubmitButton = () => {
+const SubmitButton = ({handleSubmit}) => {
   return (
-    <Button id="submitButton" type="submit">Search Recipes</Button>
+    <Button id="submitButton" type="submit" onClick={handleSubmit}>Search Recipes</Button>
   )
 }
 
