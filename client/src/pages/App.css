@@ -41,7 +41,7 @@
 
 /*  LandingPage.js */
 
-.landingPage, .recipeList {
+.landingPage {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -60,11 +60,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.75;
+  opacity: 0.50;
 }
 
 /* RecipeList.js */
 
 #recipeListContainer {
-  border:solid red 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

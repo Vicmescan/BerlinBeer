@@ -8,21 +8,21 @@ const RecipeList = () => {
   return (
     <div className='recipeList'>
       <NavigationBar />
-      <Container fluid>
-        <Row className="justify-content-center">
-          <Col md={{ span: 3 }}><MealCard /></Col>
-          <Col md={{ span: 3 }}><MealCard /></Col>
-          <Col md={{ span: 3 }}><MealCard /></Col>
+      <Container fluid id="recipeListContainer" >
+      <Row>
+          <Col><MealCard /></Col>
+          <Col><MealCard /></Col>
+          <Col><MealCard /></Col>
         </Row>
-        <Row className="justify-content-center">
-          <Col md={{ span: 3 }}><MealCard /></Col>
-          <Col md={{ span: 3 }}><MealCard /></Col>
-          <Col md={{ span: 3 }}><MealCard /></Col>
+        <Row>
+          <Col><MealCard /></Col>
+          <Col><MealCard /></Col>
+          <Col><MealCard /></Col>
         </Row>
-        <Row className="justify-content-center">
-          <Col md={{ span: 3 }}><MealCard /></Col>
-          <Col md={{ span: 3 }}><MealCard /></Col>
-          <Col md={{ span: 3 }}><MealCard /></Col>
+        <Row>
+          <Col><MealCard /></Col>
+          <Col><MealCard /></Col>
+          <Col><MealCard /></Col>
         </Row>
       </Container>
     </div>
