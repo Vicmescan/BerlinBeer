@@ -13,12 +13,11 @@ function LandingPage() {
   const [meat, setMeat] = useState(true);
   const [vegan, setVegan] = useState(false);
 
+  /* API Secret Key, I hope */
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   /*  List of ingredients that you have in your home */
   const [ingredients, setIngredients] = useState(localStorage.getItem('ingredients') !== null ? JSON.parse(localStorage.getItem('ingredients')) : []);
-
-  // const process = 'bd8324cc1d1c4fe5b0a50eaf028b57e1';
 
   useEffect(() => {
     /* take the ingredients list, if they are in local storage */
@@ -27,12 +26,15 @@ function LandingPage() {
     }
   }, [])
 
+  // const ingredientsLow = ingredients.map(ingredient => ingredient.toLowerCase()).toString().replaceAll(',','+');
+  // console.log(ingredientsLow);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2&apiKey=${API_KEY}`);
+    const ingredientsLow = ingredients.map(ingredient => ingredient.toLowerCase()).toString().replaceAll(',','+');
+    const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsLow}&apiKey=${API_KEY}`);
     if (!response.ok) {
-      const message = `An error has occured: ${response.status}`;
+      const message = `OPS, an error has happened: ${response.status}`;
       throw new Error(message);
     }
     const filteredRecipe = await response.json();
