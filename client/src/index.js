@@ -5,7 +5,6 @@ import IntroPage from './pages/IntroPage';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import RecipeList from './pages/RecipeList';
-
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AddIngredient from '../components/AddIngredient';
 import IngredientList from '../components/IngredientList';
 import NavigationBar from '../components/NavigationBar';
 import SubmitButton from '../components/SubmitButton';
 import './App.css';
 
+
 function LandingPage() {
+
+  const navigate = useNavigate();
 
   /* Exception of ingredients to do the filter in the recept list */
   const [lactose, setLactose] = useState(true);
@@ -26,19 +30,19 @@ function LandingPage() {
     }
   }, [])
 
-  // const ingredientsLow = ingredients.map(ingredient => ingredient.toLowerCase()).toString().replaceAll(',','+');
-  // console.log(ingredientsLow);
-
+  /* Submit button function */
   async function handleSubmit(e) {
     e.preventDefault();
-    const ingredientsLow = ingredients.map(ingredient => ingredient.toLowerCase()).toString().replaceAll(',','+');
+    const ingredientsLow = ingredients.map(ingredient => ingredient.toLowerCase()).toString().replaceAll(',', '+');
     const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsLow}&apiKey=${API_KEY}`);
+    /* if error in connect */
     if (!response.ok) {
       const message = `OPS, an error has happened: ${response.status}`;
       throw new Error(message);
     }
+    /* if connect succesfuly */
     const filteredRecipe = await response.json();
-    console.log(filteredRecipe);
+    navigate('/recipes', { state: { recipes: filteredRecipe } });
   }
 
 
