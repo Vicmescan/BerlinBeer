@@ -1,7 +1,7 @@
 import React from 'react'
 import MealCard from '../components/MealCard'
 import NavigationBar from '../components/NavigationBar'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Col } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
 import './App.css'
 
@@ -17,21 +17,9 @@ const RecipeList = () => {
     <div className='recipeList'>
       <NavigationBar />
       <Container fluid id="recipeListContainer" >
-      <Row>
-          <Col><MealCard /></Col>
-          <Col><MealCard /></Col>
-          <Col><MealCard /></Col>
-        </Row>
-        <Row>
-          <Col><MealCard /></Col>
-          <Col><MealCard /></Col>
-          <Col><MealCard /></Col>
-        </Row>
-        <Row>
-          <Col><MealCard /></Col>
-          <Col><MealCard /></Col>
-          <Col><MealCard /></Col>
-        </Row>
+        {recipes.map((item) => (
+          <Col><MealCard item={item} /></Col>
+        ))}
       </Container>
     </div>
   )

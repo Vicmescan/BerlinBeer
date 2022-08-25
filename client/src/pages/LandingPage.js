@@ -40,7 +40,7 @@ function LandingPage() {
       const message = `OPS, an error has happened: ${response.status}`;
       throw new Error(message);
     }
-    /* if connect succesfuly */
+    /* if connect successfully */
     const filteredRecipe = await response.json();
     navigate('/recipes', { state: { recipes: filteredRecipe } });
   }
