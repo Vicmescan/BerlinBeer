@@ -49,7 +49,7 @@ function LandingPage() {
 
   return (
     <div className="landingPage">
-      <NavigationBar lactose={lactose} setLactose={setLactose} gluten={gluten} setGluten={setGluten} meat={meat} setMeat={setMeat} vegan={vegan} setVegan={setVegan} />
+      <NavigationBar noDisplay={false} lactose={lactose} setLactose={setLactose} gluten={gluten} setGluten={setGluten} meat={meat} setMeat={setMeat} vegan={vegan} setVegan={setVegan} />
       <AddIngredient ingredients={ingredients} setIngredients={setIngredients} />
       <IngredientList ingredients={ingredients} setIngredients={setIngredients} />
       <SubmitButton handleSubmit={handleSubmit} />

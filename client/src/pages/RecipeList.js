@@ -15,7 +15,7 @@ const RecipeList = () => {
 
   return (
     <div className='recipeList'>
-      <NavigationBar />
+      <NavigationBar noDisplay={true} />
       <Container fluid id="recipeListContainer" >
         {recipes.map((item) => (
           <Col><MealCard item={item} /></Col>
