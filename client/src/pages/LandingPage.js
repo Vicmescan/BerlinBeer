@@ -34,14 +34,18 @@ function LandingPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     const ingredientsLow = ingredients.map(ingredient => ingredient.toLowerCase()).toString().replaceAll(',', '+');
-    const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsLow}&apiKey=${API_KEY}`);
+    const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsLow}/autocomplete&apiKey=${API_KEY}`);
     /* if error in connect */
     if (!response.ok) {
       const message = `OPS, an error has happened: ${response.status}`;
       throw new Error(message);
     }
     /* if connect successfully */
-    const filteredRecipe = await response.json();
+    const recipe = await response.json();
+    const filteredRecipe = recipe.filter(recipe => recipe.missedIngredients === [])
+    console.log(filteredRecipe);
+    // const newArray = filteredRecipe.filter(el => {
+    //   el.
     navigate('/recipes', { state: { recipes: filteredRecipe } });
   }
 
